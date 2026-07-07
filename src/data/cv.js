@@ -33,13 +33,23 @@ export const cvData = {
                     { name: "Wotbi", url: "https://wotbi.com" },
                     { name: "Bluerock", url: "http://72.251.13.129:4321/" }
                 ],
-                description: "Orchestration of bots using MCP servers to enable autonomous (agentic) workflows. Design of ETL processes with FastAPI, Pandas and PyArrow for efficient migration to Parquet. Automation and scraping with Playwright for account management. Development of intelligent support assistants and messaging systems using Java 21 and the SMPP protocol."
+                description: [
+                    "Orchestration of bots using MCP servers to enable autonomous (agentic) workflows.",
+                    "Design of ETL processes with FastAPI, Pandas and PyArrow for efficient migration to Parquet.",
+                    "Automation and scraping with Playwright for account management.",
+                    "Development of intelligent support assistants and messaging systems using Java 21 and the SMPP protocol."
+                ]
             },
             {
                 role: "Developer Intern",
                 company: "Zacsoft",
                 period: "May 2024 - August 2024",
-                description: "Implementation of assistants with LangChain and LLMs for operational guidance of the XControl system. Creation of an industrial chatbot for real-time report generation. Data capture automation via API connected to industrial scales (IoT). Optimization of relational databases for high availability and low latency."
+                description: [
+                    "Implementation of assistants with LangChain and LLMs for operational guidance of the XControl system.",
+                    "Creation of an industrial chatbot for real-time report generation.",
+                    "Data capture automation via API connected to industrial scales (IoT).",
+                    "Optimization of relational databases for high availability and low latency."
+                ]
             }
         ],
         contact: sharedContact
@@ -57,13 +67,23 @@ export const cvData = {
                     { name: "Wotbi", url: "https://wotbi.com" },
                     { name: "Bluerock", url: "http://72.251.13.129:4321/" }
                 ],
-                description: "Orchestration de bots usando servidores MCP para habilitar flujos de trabajo autónomos (agénticos). Diseño de procesos ETL con FastAPI, Pandas y PyArrow para migración eficiente a Parquet. Automatización y scraping con Playwright. Desarrollo de asistentes de soporte inteligentes y sistemas de mensajería usando Java 21 y protocolo SMPP."
+                description: [
+                    "Orchestration de bots usando servidores MCP para habilitar flujos de trabajo autónomos (agénticos).",
+                    "Diseño de procesos ETL con FastAPI, Pandas y PyArrow para migración eficiente a Parquet.",
+                    "Automatización y scraping con Playwright.",
+                    "Desarrollo de asistentes de soporte inteligentes y sistemas de mensajería usando Java 21 y protocolo SMPP."
+                ]
             },
             {
                 role: "Developer Intern",
                 company: "Zacsoft",
                 period: "Mayo 2024 - Agosto 2024",
-                description: "Implementación de asistentes con LangChain y LLMs para guía operativa del sistema XControl. Creación de un chatbot industrial para reportes en tiempo real. Automatización de captura de datos vía API conectada a básculas industriales (IoT). Modificación y optimización de bases de datos relacionales para alta disponibilidad."
+                description: [
+                    "Implementación de asistentes con LangChain y LLMs para guía operativa del sistema XControl.",
+                    "Creación de un chatbot industrial para reportes en tiempo real.",
+                    "Automatización de captura de datos vía API conectada a básculas industriales (IoT).",
+                    "Modificación y optimización de bases de datos relacionales para alta disponibilidad."
+                ]
             }
         ],
         contact: sharedContact

@@ -22,10 +22,12 @@ const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
             <li><a href={getPath('/#courses')} class="text-sm font-medium text-[var(--ink)] opacity-70 hover:opacity-100 hover:text-[var(--brand)] transition-colors block py-2 md:py-0">{t('nav.courses')}</a></li>
             <li><a href={getPath('/#contact')} class="text-sm font-medium text-[var(--ink)] opacity-70 hover:opacity-100 hover:text-[var(--brand)] transition-colors block py-2 md:py-0">{t('nav.contact')}</a></li>
             
-            <li class="md:pl-4 md:border-l border-[var(--dust-stroke)] flex items-center gap-2 py-2 md:py-0">
-                <a href="/" class={`text-sm font-medium transition-colors ${lang === 'en' ? 'text-[var(--brand)]' : 'text-[var(--ink)] opacity-50 hover:opacity-80'}`}>EN</a>
-                <span class="text-[var(--dust-stroke)]">|</span>
-                <a href="/es/" class={`text-sm font-medium transition-colors ${lang === 'es' ? 'text-[var(--brand)]' : 'text-[var(--ink)] opacity-50 hover:opacity-80'}`}>ES</a>
+            <li class="md:pl-4 md:border-l border-[var(--dust-stroke)] flex items-center py-2 md:py-0">
+                <div class="relative flex items-center bg-[var(--fog-100)] rounded-full p-1 border border-[var(--dust-stroke)] shadow-inner">
+                    <div class={`absolute h-[24px] w-[36px] bg-[var(--bg-color)] rounded-full shadow-sm transition-transform duration-300 ease-in-out border border-[var(--dust-stroke)] ${lang === 'en' ? 'translate-x-0' : 'translate-x-[36px]'}`}></div>
+                    <a href="/" class={`relative z-10 flex items-center justify-center h-[24px] w-[36px] text-[10px] font-bold transition-colors ${lang === 'en' ? 'text-[var(--brand)]' : 'text-[var(--ink)] opacity-60 hover:opacity-100'}`}>EN</a>
+                    <a href="/es/" class={`relative z-10 flex items-center justify-center h-[24px] w-[36px] text-[10px] font-bold transition-colors ${lang === 'es' ? 'text-[var(--brand)]' : 'text-[var(--ink)] opacity-60 hover:opacity-100'}`}>ES</a>
+                </div>
             </li>
 
             <!-- Theme Toggle -->
@@ -36,9 +38,6 @@ const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
                     </svg>
                     <svg id="theme-icon-dark" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <svg id="theme-icon-system" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                 </button>
             </li>
@@ -82,34 +81,27 @@ const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
         const themeBtn = document.getElementById('theme-toggle');
         const iconLight = document.getElementById('theme-icon-light');
         const iconDark = document.getElementById('theme-icon-dark');
-        const iconSystem = document.getElementById('theme-icon-system');
-        const themes = ['system', 'light', 'dark'];
+        const themes = ['light', 'dark'];
         
-        let currentTheme = localStorage.getItem('theme') || 'system';
+        let currentTheme = localStorage.getItem('theme');
+        if (currentTheme !== 'light' && currentTheme !== 'dark') {
+            currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+        }
 
         const updateThemeUI = (theme) => {
             iconLight?.classList.add('hidden');
             iconDark?.classList.add('hidden');
-            iconSystem?.classList.add('hidden');
 
             if (theme === 'light') iconLight?.classList.remove('hidden');
             if (theme === 'dark') iconDark?.classList.remove('hidden');
-            if (theme === 'system') iconSystem?.classList.remove('hidden');
 
-            const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            if (isDark) {
+            if (theme === 'dark') {
                 document.documentElement.classList.add('dark');
             } else {
                 document.documentElement.classList.remove('dark');
             }
         };
-
-        // Listen for OS theme changes if in system mode
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-            if (localStorage.getItem('theme') === 'system') {
-                updateThemeUI('system');
-            }
-        });
 
         themeBtn?.addEventListener('click', () => {
             const currentIndex = themes.indexOf(currentTheme);
