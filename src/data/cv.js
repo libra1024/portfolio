@@ -5,7 +5,7 @@ const sharedSkills = [
 ];
 
 const sharedContact = {
-    email: "libra1024@example.com",
+    email: import.meta.env.PUBLIC_EMAIL || "libra1024@example.com",
     github: "",
     linkedin: ""
 };
