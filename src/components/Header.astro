@@ -39,9 +39,6 @@ const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
                     <svg id="theme-icon-dark" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
-                    <svg id="theme-icon-system" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
                 </button>
             </li>
         </ul>
@@ -84,34 +81,23 @@ const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
         const themeBtn = document.getElementById('theme-toggle');
         const iconLight = document.getElementById('theme-icon-light');
         const iconDark = document.getElementById('theme-icon-dark');
-        const iconSystem = document.getElementById('theme-icon-system');
-        const themes = ['system', 'light', 'dark'];
+        const themes = ['light', 'dark'];
         
-        let currentTheme = localStorage.getItem('theme') || 'system';
+        let currentTheme = localStorage.getItem('theme') || 'dark';
 
         const updateThemeUI = (theme) => {
             iconLight?.classList.add('hidden');
             iconDark?.classList.add('hidden');
-            iconSystem?.classList.add('hidden');
 
             if (theme === 'light') iconLight?.classList.remove('hidden');
             if (theme === 'dark') iconDark?.classList.remove('hidden');
-            if (theme === 'system') iconSystem?.classList.remove('hidden');
 
-            const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-            if (isDark) {
+            if (theme === 'dark') {
                 document.documentElement.classList.add('dark');
             } else {
                 document.documentElement.classList.remove('dark');
             }
         };
-
-        // Listen for OS theme changes if in system mode
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-            if (localStorage.getItem('theme') === 'system') {
-                updateThemeUI('system');
-            }
-        });
 
         themeBtn?.addEventListener('click', () => {
             const currentIndex = themes.indexOf(currentTheme);
