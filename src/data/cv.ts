@@ -1,3 +1,36 @@
+export interface LinkItem {
+    name: string;
+    url: string;
+}
+
+export interface ExperienceItem {
+    role: string;
+    company: string;
+    period: string;
+    links?: LinkItem[];
+    description: string[];
+}
+
+export interface CourseItem {
+    name: string;
+    date: string;
+    url: string;
+}
+
+export interface ContactInfo {
+    email: string;
+    github: string;
+    linkedin: string;
+}
+
+export interface CVProfile {
+    about: string;
+    skills: string[];
+    courses: CourseItem[];
+    experience: ExperienceItem[];
+    contact: ContactInfo;
+}
+
 const sharedSkills = [
     "Java 21", "Python 3.11+", "Node.js 24",
     "MariaDB 11", "Docker", "Git", "Linux",
@@ -19,7 +52,7 @@ const sharedCourses = [
     { name: "CCNA: Switching, Routing, and Wireless Essentials", date: "2023", url: "https://www.credly.com/badges/6380a380-ad42-43c0-97ac-ff3855b21583" }
 ];
 
-export const cvData = {
+export const cvData: Record<string, CVProfile> = {
     en: {
         about: "A Computer Engineering graduate and Backend Developer highly interested in Machine Learning and Agentic Automation. Capable of building scalable ETL solutions, autonomous workflows, and intelligent assistants. Passionate about integrating AI into backend architectures.",
         skills: sharedSkills,
