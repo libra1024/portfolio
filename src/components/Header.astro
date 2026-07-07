@@ -14,6 +14,7 @@ const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
             <li><a href={getPath('/#about')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.about')}</a></li>
             <li><a href={getPath('/#skills')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.skills')}</a></li>
             <li><a href={getPath('/#experience')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.experience')}</a></li>
+            <li><a href={getPath('/#courses')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.courses')}</a></li>
             <li><a href={getPath('/#contact')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.contact')}</a></li>
             <li class="pl-4 border-l border-dust-stroke flex gap-2">
                 <a href="/" class={`text-sm font-medium transition-colors ${lang === 'en' ? 'text-brand' : 'text-gray-400 hover:text-gray-600'}`}>EN</a>
