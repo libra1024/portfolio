@@ -6,15 +6,18 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const data = cvData[lang as keyof typeof cvData];
 ---
-<section id="experience" class="py-24 px-8 max-w-4xl mx-auto reveal">
-    <h2 class="section-title" set:html={t('section.experience').replace(/Experience|Profesional/g, match => `<span class="text-brand">${match}</span>`)}></h2>
-    <div class="relative max-w-3xl mx-auto border-l-2 border-dust-stroke ml-4 md:ml-auto">
+<section id="experience" class="py-16 md:py-24 px-4 md:px-8 max-w-4xl mx-auto reveal">
+    <h2 class="section-title" set:html={t('section.experience').replace(/Experience|Profesional/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
+    <div class="relative max-w-3xl mx-auto border-l-2 border-[var(--dust-stroke)] ml-4 md:ml-auto">
         {data.experience.map(job => (
-            <div class="relative pl-8 pb-12 last:pb-0">
-                <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-white border-2 border-brand shadow-[0_0_0_4px_rgba(0,51,255,0.1)]"></div>
-                <h3 class="text-2xl font-bold text-ink mb-1">{job.role}</h3>
-                <h4 class="text-brand font-medium mb-3">{job.company} <span class="text-gray-500 font-normal ml-2">| {job.period}</span></h4>
-                <p class="text-gray-600 leading-relaxed">{job.description}</p>
+            <div class="relative pl-6 md:pl-8 pb-12 last:pb-0">
+                <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-[var(--bg-color)] border-2 border-[var(--brand)] shadow-[0_0_0_4px_rgba(0,51,255,0.1)]"></div>
+                <h3 class="text-xl md:text-2xl font-bold text-[var(--ink)] mb-1">{job.role}</h3>
+                <h4 class="text-[var(--brand)] font-medium mb-3 flex flex-col md:flex-row md:items-center">
+                    {job.company} 
+                    <span class="text-[var(--ink)] opacity-60 font-normal md:ml-2 text-sm md:text-base">{job.period}</span>
+                </h4>
+                <p class="text-[var(--ink)] opacity-80 leading-relaxed text-sm md:text-base">{job.description}</p>
             </div>
         ))}
     </div>
