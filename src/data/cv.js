@@ -1,5 +1,6 @@
 const sharedSkills = [
     "Java 21", "Spring Boot 3", "Python (FastAPI, Django)",
+    "Node.js", "Next.js", "Astro",
     "ETL", "Pandas", "PyArrow", "Parquet", "REST APIs",
     "Linux", "Docker", "Git", "SMPP", "MySQL", "MariaDB",
     "Oracle", "SQL optimization", "LLMs", "LangChain",
