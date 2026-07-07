@@ -89,7 +89,7 @@ const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
             localStorage.setItem('theme', currentTheme);
         }
 
-        const updateThemeUI = (theme) => {
+        const updateThemeUI = (theme: string | null): void => {
             iconLight?.classList.add('hidden');
             iconDark?.classList.add('hidden');
 

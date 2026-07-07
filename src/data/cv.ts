@@ -31,19 +31,19 @@ export interface CVProfile {
     contact: ContactInfo;
 }
 
-const sharedSkills = [
+const sharedSkills: string[] = [
     "Java 21", "Python 3.11+", "Node.js 24",
     "MariaDB 11", "Docker", "Git", "Linux",
     "Spring Framework 6", "Spring Boot 3", "Django 5.2", "FastAPI", "Next.js 16", "Astro 5"
 ];
 
-const sharedContact = {
+const sharedContact: ContactInfo = {
     email: import.meta.env.PUBLIC_EMAIL || "libra1024@example.com",
     github: "",
     linkedin: ""
 };
 
-const sharedCourses = [
+const sharedCourses: CourseItem[] = [
     { name: "Google Cloud Computing Foundations", date: "2024", url: "https://www.credly.com/badges/0400bc26-96f1-490d-b216-677b1b9672a5/public_url" },
     { name: "AWS Academy Cloud Architecting", date: "2024", url: "https://www.credly.com/badges/6ba145fa-fb53-487f-b353-2ed20db92277" },
     { name: "AWS Academy Cloud Foundations", date: "2024", url: "https://www.credly.com/badges/6c8cbcca-f735-45f3-87d5-7bf8d1a11197" },
@@ -52,7 +52,7 @@ const sharedCourses = [
     { name: "CCNA: Switching, Routing, and Wireless Essentials", date: "2023", url: "https://www.credly.com/badges/6380a380-ad42-43c0-97ac-ff3855b21583" }
 ];
 
-export const cvData: Record<string, CVProfile> = {
+export const cvData: Record<'en' | 'es', CVProfile> = {
     en: {
         about: "A Computer Engineering graduate and Backend Developer highly interested in Machine Learning and Agentic Automation. Capable of building scalable ETL solutions, autonomous workflows, and intelligent assistants. Passionate about integrating AI into backend architectures.",
         skills: sharedSkills,
