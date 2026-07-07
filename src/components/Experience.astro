@@ -17,7 +17,12 @@ const data = cvData[lang as keyof typeof cvData];
                     {job.company} 
                     <span class="text-[var(--ink)] opacity-50 font-normal ml-2 text-xs">{job.period}</span>
                 </h4>
-                <p class="text-[var(--ink)] opacity-70 leading-relaxed text-xs md:text-sm">{job.description}</p>
+                <ul class="list-disc list-outside ml-4 mt-2 space-y-1 text-[var(--ink)] opacity-70 leading-relaxed text-xs md:text-sm">
+                    {/* @ts-ignore */}
+                    {job.description.map((item: string) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
                 {/* @ts-ignore */}
                 {job.links && (
                     <div class="flex flex-wrap gap-3 mt-3">
