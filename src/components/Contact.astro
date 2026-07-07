@@ -1,0 +1,27 @@
+---
+import { cvData } from '../data/cv.js';
+---
+<section id="contact" class="section reveal">
+    <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
+    <div class="contact-card">
+        <p>Ready to build something extraordinary? Let's connect.</p>
+        <a href={`mailto:${cvData.contact.email}`} class="btn btn-primary">Send an Email</a>
+    </div>
+</section>
+
+<style>
+    .contact-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 1rem;
+        padding: 4rem 2rem;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .contact-card p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: var(--text-muted);
+    }
+</style>
