@@ -1,20 +1,14 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { cvData } from '../data/cv.js';
----
-<section id="about" class="section reveal">
-    <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-    <div class="about-content">
-        <p>{cvData.about}</p>
-    </div>
-</section>
 
-<style>
-    .about-content p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        color: var(--text-muted);
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-</style>
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const data = cvData[lang as keyof typeof cvData];
+---
+<section id="about" class="py-24 px-8 max-w-4xl mx-auto reveal">
+    <h2 class="section-title" set:html={t('section.about').replace(/Me|Mí/g, match => `<span class="text-brand">${match}</span>`)}></h2>
+    <p class="text-lg leading-relaxed text-gray-600 text-center">
+        {data.about}
+    </p>
+</section>
