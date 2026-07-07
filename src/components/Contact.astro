@@ -1,27 +1,16 @@
 ---
-import { cvData } from '../data/cv.js';
----
-<section id="contact" class="section reveal">
-    <h2 class="section-title">Get in <span class="gradient-text">Touch</span></h2>
-    <div class="contact-card">
-        <p>Ready to build something extraordinary? Let's connect.</p>
-        <a href={`mailto:${cvData.contact.email}`} class="btn btn-primary">Send an Email</a>
-    </div>
-</section>
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { cvData } from '../data/cv';
 
-<style>
-    .contact-card {
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        border-radius: 1rem;
-        padding: 4rem 2rem;
-        text-align: center;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .contact-card p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        color: var(--text-muted);
-    }
-</style>
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const data = cvData[lang as keyof typeof cvData];
+---
+<article id="contact" class="bento-card h-full flex flex-col items-center justify-center text-center relative overflow-hidden group">
+    <div class="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-[var(--brand)] to-transparent opacity-5 group-hover:opacity-10 transition-opacity"></div>
+    <h2 class="text-xl font-bold mb-4 z-10" set:html={t('section.contact').replace(/Touch|Contacto/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
+    <p class="text-sm md:text-base text-[var(--ink)] opacity-80 mb-6 z-10">{t('contact.text')}</p>
+    <a href={`mailto:${data.contact.email}`} class="inline-block px-6 py-2 rounded-lg bg-[var(--ink)] text-[var(--bg-color)] font-medium hover:opacity-90 transition-opacity shadow-md text-sm z-10">
+        {t('contact.btn')}
+    </a>
+</article>
