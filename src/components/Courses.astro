@@ -6,16 +6,16 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const data = cvData[lang as keyof typeof cvData];
 ---
-<section id="courses" class="py-24 px-8 max-w-4xl mx-auto reveal bg-fog-50 rounded-3xl border border-dust-stroke my-12">
-    <h2 class="section-title" set:html={t('section.courses').replace(/Courses|Cursos/g, match => `<span class="text-brand">${match}</span>`)}></h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<section id="courses" class="py-16 md:py-24 px-4 md:px-8 max-w-4xl mx-auto reveal bg-[var(--fog-50)] rounded-2xl md:rounded-3xl border border-[var(--dust-stroke)] my-8 md:my-12">
+    <h2 class="section-title" set:html={t('section.courses').replace(/Courses|Cursos/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {data.courses.map(course => (
-            <a href={course.url} target="_blank" rel="noopener noreferrer" class="block bg-white border border-dust-stroke p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand transition-all group">
+            <a href={course.url} target="_blank" rel="noopener noreferrer" class="block bg-[var(--bg-color)] border border-[var(--dust-stroke)] p-5 md:p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-[var(--brand)] transition-all group">
                 <div class="flex justify-between items-start mb-2">
-                    <h3 class="text-lg font-bold text-ink group-hover:text-brand transition-colors">{course.name}</h3>
-                    <span class="text-xs font-medium bg-fog-100 text-gray-500 px-2 py-1 rounded-full">{course.date}</span>
+                    <h3 class="text-base md:text-lg font-bold text-[var(--ink)] group-hover:text-[var(--brand)] transition-colors pr-2">{course.name}</h3>
+                    <span class="text-xs font-medium bg-[var(--fog-100)] text-[var(--ink)] opacity-70 px-2 py-1 rounded-full whitespace-nowrap">{course.date}</span>
                 </div>
-                <div class="flex items-center text-brand text-sm font-medium mt-4">
+                <div class="flex items-center text-[var(--brand)] text-sm font-medium mt-4">
                     <span>View Certificate</span>
                     <svg class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
