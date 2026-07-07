@@ -6,9 +6,9 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const data = cvData[lang as keyof typeof cvData];
 ---
-<section id="about" class="py-16 md:py-24 px-4 md:px-8 max-w-4xl mx-auto reveal">
-    <h2 class="section-title" set:html={t('section.about').replace(/Me|Mí/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
-    <p class="text-base md:text-lg leading-relaxed text-[var(--ink)] opacity-80 text-center">
+<article id="about" class="bento-card h-full flex flex-col justify-center">
+    <h2 class="text-xl font-bold mb-4" set:html={t('section.about').replace(/Me|Mí/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
+    <p class="text-sm md:text-base leading-relaxed text-[var(--ink)] opacity-80">
         {data.about}
     </p>
-</section>
+</article>
