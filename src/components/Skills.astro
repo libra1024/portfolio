@@ -6,13 +6,13 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const data = cvData[lang as keyof typeof cvData];
 ---
-<section id="skills" class="py-16 md:py-24 px-4 md:px-8 max-w-5xl mx-auto reveal bg-[var(--fog-50)] rounded-2xl md:rounded-3xl border border-[var(--dust-stroke)] my-8 md:my-12">
-    <h2 class="section-title" set:html={t('section.skills').replace(/Skills|Clave/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
-    <div class="flex flex-wrap gap-2 md:gap-3 justify-center">
+<article id="skills" class="bento-card h-full">
+    <h2 class="text-xl font-bold mb-6" set:html={t('section.skills').replace(/Skills|Clave/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
+    <div class="flex flex-wrap gap-2">
         {data.skills.map(skill => (
-            <div class="bg-[var(--bg-color)] border border-[var(--dust-stroke)] px-4 md:px-5 py-2 md:py-2.5 rounded-full text-sm md:text-base font-medium text-[var(--ink)] shadow-sm hover:border-[var(--brand)] hover:text-[var(--brand)] transition-colors cursor-default">
+            <span class="bg-[var(--fog-50)] border border-[var(--dust-stroke)] px-3 py-1.5 rounded-lg text-xs md:text-sm font-medium text-[var(--ink)] hover:border-[var(--brand)] hover:text-[var(--brand)] transition-colors cursor-default">
                 {skill}
-            </div>
+            </span>
         ))}
     </div>
-</section>
+</article>
