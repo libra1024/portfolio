@@ -13,33 +13,27 @@ import Contact from '../components/Contact.astro';
 	<Header />
 	<main class="flex-grow pt-28 pb-16 px-4 md:px-8 max-w-7xl mx-auto w-full">
 		<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-auto">
-			<!-- Hero takes full width on mobile, 2 cols on md, 3 cols on lg -->
 			<div class="md:col-span-2 lg:col-span-2 lg:row-span-2">
 				<Hero />
 			</div>
 			
-			<!-- About takes 1 col -->
 			<div class="md:col-span-1 lg:col-span-2">
 				<About />
 			</div>
 
-			<!-- Experience takes 1 col but spans 2 rows tall -->
 			<div class="md:col-span-3 lg:col-span-2 lg:row-span-3">
 				<Experience />
 			</div>
 
-			<!-- Skills takes remaining space -->
 			<div class="md:col-span-3 lg:col-span-2">
 				<Skills />
 			</div>
 
-			<!-- Courses takes 2 cols -->
 			<div class="md:col-span-2 lg:col-span-2">
 				<Courses />
 			</div>
 
-			<!-- Contact takes remaining -->
-			<div class="md:col-span-1 lg:col-span-2">
+			<div class="md:col-span-1 lg:col-span-4">
 				<Contact />
 			</div>
 		</div>
