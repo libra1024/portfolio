@@ -1,5 +1,5 @@
 const sharedSkills = [
-    "Java 21", "Python", "Node.js 24",
+    "Java 21", "Python 3.11+", "Node.js 24",
     "MariaDB 11", "Docker", "Git", "Linux",
     "Spring Framework 6", "Spring Boot 3", "Django 5.2", "FastAPI", "Next.js 16", "Astro 5"
 ];
