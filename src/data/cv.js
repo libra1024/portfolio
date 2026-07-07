@@ -29,6 +29,10 @@ export const cvData = {
                 role: "Backend Developer",
                 company: "Wotbi",
                 period: "June 2025 - June 2026",
+                links: [
+                    { name: "Wotbi", url: "https://wotbi.com" },
+                    { name: "Bluerock", url: "http://72.251.13.129:4321/" }
+                ],
                 description: "Orchestration of bots using MCP servers to enable autonomous (agentic) workflows. Design of ETL processes with FastAPI, Pandas and PyArrow for efficient migration to Parquet. Automation and scraping with Playwright for account management. Development of intelligent support assistants and messaging systems using Java 21 and the SMPP protocol."
             },
             {
@@ -49,7 +53,11 @@ export const cvData = {
                 role: "Backend Developer",
                 company: "Wotbi",
                 period: "Junio 2025 - Junio 2026",
-                description: "Orquestación de bots usando servidores MCP para habilitar flujos de trabajo autónomos (agénticos). Diseño de procesos ETL con FastAPI, Pandas y PyArrow para migración eficiente a Parquet. Automatización y scraping con Playwright. Desarrollo de asistentes de soporte inteligentes y sistemas de mensajería usando Java 21 y protocolo SMPP."
+                links: [
+                    { name: "Wotbi", url: "https://wotbi.com" },
+                    { name: "Bluerock", url: "http://72.251.13.129:4321/" }
+                ],
+                description: "Orchestration de bots usando servidores MCP para habilitar flujos de trabajo autónomos (agénticos). Diseño de procesos ETL con FastAPI, Pandas y PyArrow para migración eficiente a Parquet. Automatización y scraping con Playwright. Desarrollo de asistentes de soporte inteligentes y sistemas de mensajería usando Java 21 y protocolo SMPP."
             },
             {
                 role: "Developer Intern",
