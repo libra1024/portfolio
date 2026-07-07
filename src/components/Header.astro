@@ -83,7 +83,11 @@ const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
         const iconDark = document.getElementById('theme-icon-dark');
         const themes = ['light', 'dark'];
         
-        let currentTheme = localStorage.getItem('theme') || 'dark';
+        let currentTheme = localStorage.getItem('theme');
+        if (currentTheme !== 'light' && currentTheme !== 'dark') {
+            currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+        }
 
         const updateThemeUI = (theme) => {
             iconLight?.classList.add('hidden');
