@@ -2,7 +2,7 @@ const sharedSkills = [
     "Java 21", "Python", "Node.js",
     "MySQL", "MariaDB", "Oracle",
     "Docker", "Git", "Linux",
-    "Spring Framework 6", "Spring Boot 3", "FastAPI", "Django", "Next.js", "Astro"
+    "Spring Framework 6", "Spring Boot 3", "Django 5.2", "FastAPI", "Next.js", "Astro"
 ];
 
 const sharedContact = {
