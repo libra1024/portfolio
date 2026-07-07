@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #0033FF;
+  --color-ink: #111827;
+  --color-fog-50: #F9FAFB;
+  --color-fog-100: #F3F4F6;
+  --color-fog-200: #E5E7EB;
+  --color-dust-stroke: #E5E7EB;
+  --color-dust-5: #F9FAFB;
+  --color-dust-10: #F3F4F6;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
+}

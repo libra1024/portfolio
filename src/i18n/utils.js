@@ -1,0 +1,55 @@
+export const languages = {
+  en: 'English',
+  es: 'Español',
+};
+
+export const defaultLang = 'en';
+
+export const ui = {
+  en: {
+    'nav.about': 'About',
+    'nav.skills': 'Skills',
+    'nav.experience': 'Experience',
+    'nav.contact': 'Contact',
+    'hero.available': 'Available for new opportunities',
+    'hero.title1': 'Building Production-Ready',
+    'hero.title2': 'Agentic Workflows',
+    'hero.cta': 'Get in Touch',
+    'hero.viewWork': 'View Work',
+    'section.about': 'About Me',
+    'section.skills': 'Core Skills',
+    'section.experience': 'Professional Experience',
+    'section.contact': 'Get in Touch',
+    'contact.text': 'Ready to build something extraordinary? Let\'s connect.',
+    'contact.btn': 'Send an Email'
+  },
+  es: {
+    'nav.about': 'Sobre mí',
+    'nav.skills': 'Habilidades',
+    'nav.experience': 'Experiencia',
+    'nav.contact': 'Contacto',
+    'hero.available': 'Disponible para nuevas oportunidades',
+    'hero.title1': 'Construyendo Flujos de Trabajo',
+    'hero.title2': 'Agénticos para Producción',
+    'hero.cta': 'Contáctame',
+    'hero.viewWork': 'Ver Trabajo',
+    'section.about': 'Sobre Mí',
+    'section.skills': 'Habilidades Clave',
+    'section.experience': 'Experiencia Profesional',
+    'section.contact': 'Ponte en Contacto',
+    'contact.text': '¿Listo para construir algo extraordinario? Conectemos.',
+    'contact.btn': 'Enviar un Correo'
+  },
+};
+
+export function getLangFromUrl(url) {
+  const [, lang] = url.pathname.split('/');
+  if (lang in ui) return lang;
+  return defaultLang;
+}
+
+export function useTranslations(lang) {
+  return function t(key) {
+    return ui[lang][key] || ui[defaultLang][key];
+  }
+}
