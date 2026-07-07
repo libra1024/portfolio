@@ -1,73 +1,39 @@
 ---
-// src/components/Header.astro
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Helper for relative links
+const getPath = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
 ---
-<header id="header">
-    <nav>
-        <div class="logo">RH</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
+<header id="header" class="fixed top-0 left-0 w-full z-50 py-4 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-transparent">
+    <nav class="max-w-6xl mx-auto px-8 flex justify-between items-center">
+        <div class="font-bold text-2xl text-ink tracking-tight">RH</div>
+        <ul class="flex items-center gap-8 list-none">
+            <li><a href={getPath('/#about')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.about')}</a></li>
+            <li><a href={getPath('/#skills')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.skills')}</a></li>
+            <li><a href={getPath('/#experience')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.experience')}</a></li>
+            <li><a href={getPath('/#contact')} class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">{t('nav.contact')}</a></li>
+            <li class="pl-4 border-l border-dust-stroke flex gap-2">
+                <a href="/" class={`text-sm font-medium transition-colors ${lang === 'en' ? 'text-brand' : 'text-gray-400 hover:text-gray-600'}`}>EN</a>
+                <span class="text-gray-300">|</span>
+                <a href="/es/" class={`text-sm font-medium transition-colors ${lang === 'es' ? 'text-brand' : 'text-gray-400 hover:text-gray-600'}`}>ES</a>
+            </li>
         </ul>
     </nav>
 </header>
-
-<style>
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        padding: 1.5rem 0;
-        transition: all 0.3s ease;
-    }
-    header.scrolled {
-        background: rgba(10, 10, 10, 0.8);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--glass-border);
-        padding: 1rem 0;
-    }
-    nav {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .logo {
-        font-family: var(--font-display);
-        font-size: 1.5rem;
-        font-weight: 700;
-        background: linear-gradient(to right, var(--accent-blue), var(--accent-violet));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-    }
-    .nav-links a {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        transition: color 0.2s ease;
-    }
-    .nav-links a:hover {
-        color: var(--text-main);
-    }
-</style>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                header?.classList.add('scrolled');
+                header?.classList.add('border-dust-stroke', 'shadow-sm', 'py-3');
+                header?.classList.remove('border-transparent', 'py-4');
             } else {
-                header?.classList.remove('scrolled');
+                header?.classList.remove('border-dust-stroke', 'shadow-sm', 'py-3');
+                header?.classList.add('border-transparent', 'py-4');
             }
         });
     });
