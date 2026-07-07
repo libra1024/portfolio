@@ -6,22 +6,21 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const data = cvData[lang as keyof typeof cvData];
 ---
-<section id="courses" class="py-16 md:py-24 px-4 md:px-8 max-w-4xl mx-auto reveal bg-[var(--fog-50)] rounded-2xl md:rounded-3xl border border-[var(--dust-stroke)] my-8 md:my-12">
-    <h2 class="section-title" set:html={t('section.courses').replace(/Courses|Cursos/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+<article id="courses" class="bento-card h-full">
+    <h2 class="text-xl font-bold mb-6" set:html={t('section.courses').replace(/Courses|Cursos/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {data.courses.map(course => (
-            <a href={course.url} target="_blank" rel="noopener noreferrer" class="block bg-[var(--bg-color)] border border-[var(--dust-stroke)] p-5 md:p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-[var(--brand)] transition-all group">
-                <div class="flex justify-between items-start mb-2">
-                    <h3 class="text-base md:text-lg font-bold text-[var(--ink)] group-hover:text-[var(--brand)] transition-colors pr-2">{course.name}</h3>
-                    <span class="text-xs font-medium bg-[var(--fog-100)] text-[var(--ink)] opacity-70 px-2 py-1 rounded-full whitespace-nowrap">{course.date}</span>
+            <a href={course.url} target="_blank" rel="noopener noreferrer" class="block bg-[var(--fog-50)] border border-[var(--dust-stroke)] p-4 rounded-xl hover:border-[var(--brand)] transition-colors group">
+                <div class="flex justify-between items-start mb-1">
+                    <h3 class="text-sm font-semibold text-[var(--ink)] group-hover:text-[var(--brand)] transition-colors pr-2 leading-tight">{course.name}</h3>
                 </div>
-                <div class="flex items-center text-[var(--brand)] text-sm font-medium mt-4">
-                    <span>View Certificate</span>
-                    <svg class="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="flex items-center justify-between mt-3">
+                    <span class="text-[10px] font-medium bg-[var(--fog-100)] border border-[var(--dust-stroke)] text-[var(--ink)] opacity-70 px-2 py-0.5 rounded-full whitespace-nowrap">{course.date}</span>
+                    <svg class="w-3.5 h-3.5 text-[var(--brand)] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </div>
             </a>
         ))}
     </div>
-</section>
+</article>
