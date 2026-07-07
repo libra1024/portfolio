@@ -1,63 +1,63 @@
 const sharedSkills = [
-    "Python (FastAPI, Pandas)", "Go (Fiber)", "Node.js (Express, NestJS)",
-    "PostgreSQL", "Cassandra", "MongoDB", "Redis",
-    "Docker", "AWS", "Google Cloud", "Nginx",
-    "React", "Astro", "TailwindCSS", "Git", "Linux"
+    "Java 21", "Spring Boot 3", "Python (FastAPI, Django)",
+    "ETL", "Pandas", "PyArrow", "Parquet", "REST APIs",
+    "Linux", "Docker", "Git", "SMPP", "MySQL", "MariaDB",
+    "Oracle", "SQL optimization", "LLMs", "LangChain",
+    "MCP", "Playwright", "chatbots"
 ];
 
 const sharedContact = {
-    email: "rh@example.com",
+    email: "libra1024@example.com",
     github: "",
     linkedin: ""
 };
 
+const sharedCourses = [
+    { name: "Google Cloud Computing Foundations", date: "2024", url: "https://www.credly.com/badges/0400bc26-96f1-490d-b216-677b1b9672a5/public_url" },
+    { name: "AWS Academy Cloud Architecting", date: "2024", url: "https://www.credly.com/badges/6ba145fa-fb53-487f-b353-2ed20db92277" },
+    { name: "AWS Academy Cloud Foundations", date: "2024", url: "https://www.credly.com/badges/6c8cbcca-f735-45f3-87d5-7bf8d1a11197" },
+    { name: "AWS Academy Cloud Developing", date: "2024", url: "https://www.credly.com/badges/82ea66f6-6267-4f86-9ff9-76ed31aa011f/public_url" },
+    { name: "CCNA: Introduction to Networks", date: "2023", url: "https://www.credly.com/badges/3cfa6c50-c305-4d94-83eb-bffca3ad9baf" },
+    { name: "CCNA: Switching, Routing, and Wireless Essentials", date: "2023", url: "https://www.credly.com/badges/6380a380-ad42-43c0-97ac-ff3855b21583" }
+];
+
 export const cvData = {
     en: {
-        about: "A Software Engineer highly interested in Machine Learning and Agentic Automation. Capable of building scalable ETL solutions, dynamic APIs, and integrating intelligence into everyday processes. Previously led key integrations at Bluerock Telcom.",
+        about: "A Computer Engineering graduate and Backend Developer highly interested in Machine Learning and Agentic Automation. Capable of building scalable ETL solutions, autonomous workflows, and intelligent assistants. Passionate about integrating AI into backend architectures.",
         skills: sharedSkills,
+        courses: sharedCourses,
         experience: [
             {
-                role: "Middle Full-Stack Developer",
-                company: "Bluerock Telcom",
-                period: "Oct 2024 - Present",
-                description: "Developed and maintained Python/Go backends. Automated customer service using ChatGPT/Claude integrations. Built robust ETL processes mapping over 1M daily records."
-            },
-            {
-                role: "Junior Back-End Developer",
-                company: "Bluerock Telcom",
-                period: "Aug 2023 - Sep 2024",
-                description: "Managed internal API. Optimized Cassandra/PostgreSQL databases."
-            },
-            {
-                role: "Freelance Full-Stack Developer",
+                role: "Backend Developer",
                 company: "Wotbi",
-                period: "2021 - 2023",
-                description: "Built e-commerce solutions, dashboards, and automated deployment pipelines."
+                period: "June 2025 - June 2026",
+                description: "Orchestration of bots using MCP servers to enable autonomous (agentic) workflows. Design of ETL processes with FastAPI, Pandas and PyArrow for efficient migration to Parquet. Automation and scraping with Playwright for account management. Development of intelligent support assistants and messaging systems using Java 21 and the SMPP protocol."
+            },
+            {
+                role: "Developer Intern",
+                company: "Zacsoft",
+                period: "May 2024 - August 2024",
+                description: "Implementation of assistants with LangChain and LLMs for operational guidance of the XControl system. Creation of an industrial chatbot for real-time report generation. Data capture automation via API connected to industrial scales (IoT). Optimization of relational databases for high availability and low latency."
             }
         ],
         contact: sharedContact
     },
     es: {
-        about: "Ingeniero de Software altamente interesado en Machine Learning y Automatización Agéntica. Capaz de construir soluciones ETL escalables, APIs dinámicas e integrar inteligencia en procesos cotidianos. Anteriormente lideré integraciones clave en Bluerock Telcom.",
+        about: "Ingeniero en Computación y Desarrollador Backend altamente interesado en Machine Learning y Automatización Agéntica. Capaz de construir soluciones ETL escalables, flujos de trabajo autónomos y asistentes inteligentes. Apasionado por integrar IA en arquitecturas backend.",
         skills: sharedSkills,
+        courses: sharedCourses,
         experience: [
             {
-                role: "Desarrollador Full-Stack Semi-Senior",
-                company: "Bluerock Telcom",
-                period: "Oct 2024 - Presente",
-                description: "Desarrollé y mantuve backends en Python/Go. Automaticé el servicio al cliente usando integraciones con ChatGPT/Claude. Construí procesos ETL robustos mapeando más de 1M de registros diarios."
-            },
-            {
-                role: "Desarrollador Back-End Junior",
-                company: "Bluerock Telcom",
-                period: "Ago 2023 - Sep 2024",
-                description: "Administré la API interna. Optimicé bases de datos Cassandra/PostgreSQL."
-            },
-            {
-                role: "Desarrollador Full-Stack Freelance",
+                role: "Backend Developer",
                 company: "Wotbi",
-                period: "2021 - 2023",
-                description: "Construí soluciones de comercio electrónico, paneles de control y pipelines de despliegue automatizados."
+                period: "Junio 2025 - Junio 2026",
+                description: "Orquestación de bots usando servidores MCP para habilitar flujos de trabajo autónomos (agénticos). Diseño de procesos ETL con FastAPI, Pandas y PyArrow para migración eficiente a Parquet. Automatización y scraping con Playwright. Desarrollo de asistentes de soporte inteligentes y sistemas de mensajería usando Java 21 y protocolo SMPP."
+            },
+            {
+                role: "Developer Intern",
+                company: "Zacsoft",
+                period: "Mayo 2024 - Agosto 2024",
+                description: "Implementación de asistentes con LangChain y LLMs para guía operativa del sistema XControl. Creación de un chatbot industrial para reportes en tiempo real. Automatización de captura de datos vía API conectada a básculas industriales (IoT). Modificación y optimización de bases de datos relacionales para alta disponibilidad."
             }
         ],
         contact: sharedContact
