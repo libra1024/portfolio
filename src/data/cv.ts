@@ -17,6 +17,11 @@ export interface CourseItem {
     url: string;
 }
 
+export interface SkillCategory {
+    label: string;
+    items: string[];
+}
+
 export interface ContactInfo {
     email: string;
     github: string;
@@ -25,17 +30,13 @@ export interface ContactInfo {
 
 export interface CVProfile {
     about: string;
-    skills: string[];
+    skills: SkillCategory[];
     courses: CourseItem[];
     experience: ExperienceItem[];
     contact: ContactInfo;
 }
 
-const sharedSkills: string[] = [
-    "Java 21", "Python 3.11+", "Node.js 24",
-    "MariaDB 11", "Docker", "Git", "Linux",
-    "Spring Framework 6", "Spring Boot 3", "Django 5.2", "FastAPI", "Next.js 16", "Astro 5"
-];
+
 
 const sharedContact: ContactInfo = {
     email: import.meta.env.PUBLIC_EMAIL || "libra1024@example.com",
@@ -55,7 +56,24 @@ const sharedCourses: CourseItem[] = [
 export const cvData: Record<'en' | 'es', CVProfile> = {
     en: {
         about: "A Computer Engineering graduate and Backend Developer highly interested in Machine Learning and Agentic Automation. Capable of building scalable ETL solutions, autonomous workflows, and intelligent assistants. Passionate about integrating AI into backend architectures.",
-        skills: sharedSkills,
+        skills: [
+            {
+                label: "Languages",
+                items: ["Java 21", "Python 3.11+", "Node.js 24"]
+            },
+            {
+                label: "Backend",
+                items: ["Spring Boot 3", "Django 5.2", "FastAPI"]
+            },
+            {
+                label: "Frontend",
+                items: ["Next.js 16", "Astro 5"]
+            },
+            {
+                label: "DevOps & Tools",
+                items: ["MariaDB 11", "Docker", "Git", "Linux"]
+            }
+        ],
         courses: sharedCourses,
         experience: [
             {
@@ -89,7 +107,24 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
     },
     es: {
         about: "Ingeniero en Computación y Desarrollador Backend altamente interesado en Machine Learning y Automatización Agéntica. Capaz de construir soluciones ETL escalables, flujos de trabajo autónomos y asistentes inteligentes. Apasionado por integrar IA en arquitecturas backend.",
-        skills: sharedSkills,
+        skills: [
+            {
+                label: "Lenguajes",
+                items: ["Java 21", "Python 3.11+", "Node.js 24"]
+            },
+            {
+                label: "Backend",
+                items: ["Spring Boot 3", "Django 5.2", "FastAPI"]
+            },
+            {
+                label: "Frontend",
+                items: ["Next.js 16", "Astro 5"]
+            },
+            {
+                label: "DevOps y Herramientas",
+                items: ["MariaDB 11", "Docker", "Git", "Linux"]
+            }
+        ],
         courses: sharedCourses,
         experience: [
             {
