@@ -23,7 +23,7 @@ export const ui = {
     'section.courses': 'Courses & Certifications',
     'section.contact': 'Get in Touch',
     'contact.text': 'Ready to build something extraordinary? Let\'s connect.',
-    'contact.btn': 'Send an Email'
+    'contact.btn': 'Contact me'
   },
   es: {
     'nav.about': 'Sobre mí',
@@ -42,7 +42,7 @@ export const ui = {
     'section.courses': 'Cursos y Certificaciones',
     'section.contact': 'Ponte en Contacto',
     'contact.text': '¿Listo para construir algo extraordinario? Conectemos.',
-    'contact.btn': 'Enviar un Correo'
+    'contact.btn': 'Contáctame'
   },
 };
 
