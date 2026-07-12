@@ -36,10 +36,14 @@ export interface CVProfile {
 }
 
 
+const formatUrl = (url: string | undefined, fallback: string) => {
+    if (!url) return fallback;
+    return /^https?:\/\//i.test(url) ? url : `https://${url}`;
+};
 
 const sharedContact: ContactInfo = {
     github: "",
-    linkedin: import.meta.env.PUBLIC_LINKEDIN || "https://linkedin.com/in/placeholder"
+    linkedin: formatUrl(import.meta.env.PUBLIC_LINKEDIN, "https://linkedin.com/in/placeholder")
 };
 
 const sharedCourses: CourseItem[] = [
