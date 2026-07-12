@@ -23,7 +23,6 @@ export interface SkillCategory {
 }
 
 export interface ContactInfo {
-    email: string;
     github: string;
     linkedin: string;
 }
@@ -39,9 +38,8 @@ export interface CVProfile {
 
 
 const sharedContact: ContactInfo = {
-    email: import.meta.env.PUBLIC_EMAIL || "libra1024@example.com",
     github: "",
-    linkedin: ""
+    linkedin: import.meta.env.PUBLIC_LINKEDIN || "https://linkedin.com/in/placeholder"
 };
 
 const sharedCourses: CourseItem[] = [

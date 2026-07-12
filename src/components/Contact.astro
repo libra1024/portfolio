@@ -10,7 +10,7 @@ const data = cvData[lang as keyof typeof cvData];
     <div class="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-[var(--brand)] to-transparent opacity-5 group-hover:opacity-10 transition-opacity"></div>
     <h2 class="text-xl font-bold mb-4 z-10" set:html={t('section.contact').replace(/Touch|Contacto/g, match => `<span class="text-[var(--brand)]">${match}</span>`)}></h2>
     <p class="text-sm md:text-base text-[var(--ink)] opacity-80 mb-6 z-10">{t('contact.text')}</p>
-    <a href={`mailto:${data.contact.email}`} class="inline-block px-6 py-2 rounded-lg bg-[var(--ink)] text-[var(--bg-color)] font-medium hover:opacity-90 transition-opacity shadow-md text-sm z-10">
+    <a href={data.contact.linkedin} target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-2 rounded-lg bg-[var(--ink)] text-[var(--bg-color)] font-medium hover:opacity-90 transition-opacity shadow-md text-sm z-10">
         {t('contact.btn')}
     </a>
 </article>
