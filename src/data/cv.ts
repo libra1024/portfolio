@@ -61,7 +61,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
         skills: [
             {
                 label: "Languages",
-                items: ["Java", "Python", "Node.js"]
+                items: ["Java", "Python"]
             },
             {
                 label: "Backend",
@@ -108,7 +108,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
         skills: [
             {
                 label: "Lenguajes",
-                items: ["Java", "Python", "Node.js"]
+                items: ["Java", "Python"]
             },
             {
                 label: "Backend",
