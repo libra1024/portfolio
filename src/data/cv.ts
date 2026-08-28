@@ -61,19 +61,15 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
         skills: [
             {
                 label: "Languages",
-                items: ["Java 21", "Python 3.11+", "Node.js 24"]
+                items: ["Java", "Python", "Node.js"]
             },
             {
                 label: "Backend",
-                items: ["Spring Boot 3", "Django 5.2", "FastAPI"]
-            },
-            {
-                label: "Frontend",
-                items: ["Next.js 16", "Astro 5"]
+                items: ["Spring Boot", "Django", "FastAPI"]
             },
             {
                 label: "DevOps & Tools",
-                items: ["MariaDB 11", "Docker", "Git", "Linux"]
+                items: ["MariaDB", "Docker", "Git", "Linux"]
             }
         ],
         courses: sharedCourses,
@@ -81,7 +77,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
             {
                 role: "Backend Developer",
                 company: "Wotbi",
-                period: "June 2025 - June 2026",
+                period: "July 2025 - July 2026",
                 links: [
                     { name: "Wotbi", url: "https://wotbi.com" },
                     { name: "Bluerock", url: "http://72.251.13.129:4321/" }
@@ -90,7 +86,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
                     "Orchestration of bots using MCP servers to enable autonomous (agentic) workflows.",
                     "Design of ETL processes with FastAPI, Pandas and PyArrow for efficient migration to Parquet.",
                     "Automation and scraping with Playwright for account management.",
-                    "Development of intelligent support assistants and messaging systems using Java 21 and the SMPP protocol."
+                    "Development of intelligent support assistants and messaging systems using Java and the SMPP protocol."
                 ]
             },
             {
@@ -112,19 +108,15 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
         skills: [
             {
                 label: "Lenguajes",
-                items: ["Java 21", "Python 3.11+", "Node.js 24"]
+                items: ["Java", "Python", "Node.js"]
             },
             {
                 label: "Backend",
-                items: ["Spring Boot 3", "Django 5.2", "FastAPI"]
-            },
-            {
-                label: "Frontend",
-                items: ["Next.js 16", "Astro 5"]
+                items: ["Spring Boot", "Django", "FastAPI"]
             },
             {
                 label: "DevOps y Herramientas",
-                items: ["MariaDB 11", "Docker", "Git", "Linux"]
+                items: ["MariaDB", "Docker", "Git", "Linux"]
             }
         ],
         courses: sharedCourses,
@@ -132,7 +124,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
             {
                 role: "Backend Developer",
                 company: "Wotbi",
-                period: "Junio 2025 - Junio 2026",
+                period: "Julio 2025 - Julio 2026",
                 links: [
                     { name: "Wotbi", url: "https://wotbi.com" },
                     { name: "Bluerock", url: "http://72.251.13.129:4321/" }
@@ -141,7 +133,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
                     "Orchestration de bots usando servidores MCP para habilitar flujos de trabajo autónomos (agénticos).",
                     "Diseño de procesos ETL con FastAPI, Pandas y PyArrow para migración eficiente a Parquet.",
                     "Automatización y scraping con Playwright.",
-                    "Desarrollo de asistentes de soporte inteligentes y sistemas de mensajería usando Java 21 y protocolo SMPP."
+                    "Desarrollo de asistentes de soporte inteligentes y sistemas de mensajería usando Java y protocolo SMPP."
                 ]
             },
             {
