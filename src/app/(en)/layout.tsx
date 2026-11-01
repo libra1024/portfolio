@@ -5,7 +5,7 @@ import SiteDocument from '../../components/SiteDocument';
 export const metadata: Metadata = {
   title: 'Portfolio | libra1024',
   description: 'Portfolio of libra1024',
-  icons: { icon: { url: '/favicon.svg', type: 'image/svg+xml' } },
+  icons: { icon: { url: '/favicon.ico', type: 'image/x-icon' } },
 };
 
 export default function EnglishLayout({ children }: { children: ReactNode }) {
