@@ -43,7 +43,7 @@ const formatUrl = (url: string | undefined, fallback: string) => {
 
 const sharedContact: ContactInfo = {
     github: "",
-    linkedin: formatUrl(import.meta.env.PUBLIC_LINKEDIN, "https://linkedin.com/in/placeholder")
+    linkedin: formatUrl(process.env.PUBLIC_LINKEDIN, "https://linkedin.com/in/placeholder")
 };
 
 const sharedCourses: CourseItem[] = [
@@ -57,7 +57,7 @@ const sharedCourses: CourseItem[] = [
 
 export const cvData: Record<'en' | 'es', CVProfile> = {
     en: {
-        about: "A Computer Engineering graduate and Backend Developer highly interested in Machine Learning and Agentic Automation. Capable of building scalable ETL solutions, autonomous workflows, and intelligent assistants. Passionate about integrating AI into backend architectures.",
+        about: "A Computer Engineering graduate and Backend Developer highly interested in Machine Learning and Agentic Automation. Capable of building autonomous workflows and intelligent assistants. Passionate about integrating AI into backend architectures.",
         skills: [
             {
                 label: "Languages",
@@ -65,7 +65,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
             },
             {
                 label: "Backend",
-                items: ["Spring Boot", "Django", "FastAPI"]
+                items: ["Spring Boot", "FastAPI"]
             },
             {
                 label: "DevOps & Tools",
@@ -104,7 +104,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
         contact: sharedContact
     },
     es: {
-        about: "Ingeniero en Computación y Desarrollador Backend altamente interesado en Machine Learning y Automatización Agéntica. Capaz de construir soluciones ETL escalables, flujos de trabajo autónomos y asistentes inteligentes. Apasionado por integrar IA en arquitecturas backend.",
+        about: "Ingeniero en Computación y Desarrollador Backend altamente interesado en Machine Learning y Automatización Agéntica. Capaz de construir flujos de trabajo autónomos y asistentes inteligentes. Apasionado por integrar IA en arquitecturas backend.",
         skills: [
             {
                 label: "Lenguajes",
@@ -112,7 +112,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
             },
             {
                 label: "Backend",
-                items: ["Spring Boot", "Django", "FastAPI"]
+                items: ["Spring Boot", "FastAPI"]
             },
             {
                 label: "DevOps y Herramientas",

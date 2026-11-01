@@ -1,46 +1,69 @@
-# Astro Starter Kit: Basics
+# Portfolio
+
+A bilingual portfolio built with Next.js App Router, React, TypeScript, and
+Tailwind CSS 4. English is available at `/` and Spanish at `/es/`.
+
+## Development
+
+Use Node.js 22.12 or newer and pnpm.
 
 ```sh
-pnpm create astro@latest -- --template basics
+pnpm install
+cp .env.example .env
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Open `http://localhost:3000`.
 
-## 🚀 Project Structure
+Set `PUBLIC_LINKEDIN` in `.env` to your LinkedIn profile URL. The value is read
+on the server when the portfolio pages are built. URLs without a scheme receive
+`https://`. Rebuild after changing the value because both pages are prerendered.
+The `.env` file stays local and is ignored by Git.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Commands
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+| Command | Purpose |
+| --- | --- |
+| `pnpm dev` | Start the development server |
+| `pnpm build` | Create the production build in `.next/` |
+| `pnpm start` | Serve the production build |
+| `pnpm preview` | Alias for `pnpm start` |
+| `pnpm typecheck` | Generate route types and check TypeScript |
+| `pnpm test:unit` | Check contact configuration |
+| `pnpm test` | Run unit and production browser tests |
+
+Before running the browser tests:
+
+```sh
+pnpm exec playwright install chromium
+pnpm build
+pnpm test
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The test suite starts its own production server on port 3000, which must be free.
+To use an existing Chromium installation, set
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable path.
 
-## 🧞 Commands
+## Structure
 
-All commands are run from the root of the project, from a terminal:
+- `src/app/(en)/`: English root layout and home page.
+- `src/app/(es)/`: Spanish root layout and `/es/` page.
+- `src/components/`: Shared portfolio sections, document shell, and interactive header.
+- `src/data/cv.ts`: Localized profile, experience, skills, and courses.
+- `src/i18n/utils.ts`: Interface translations and language types.
+- `src/lib/preferences.ts`: Initial browser theme and language preferences.
+- `src/styles/global.css`: Tailwind theme and shared styles.
+- `public/`: Static assets.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+The two route groups produce static HTML with the appropriate document language.
+Language switching performs a full navigation between their root layouts. Theme
+preferences persist in browser storage. Spanish browser preferences trigger a
+one-time redirect unless the visitor has explicitly chosen a language.
 
-## 👀 Want to learn more?
+## Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+On Vercel, select the **Next.js** framework preset and use `pnpm build`. Remove
+any previous custom output-directory setting. Configure the LinkedIn variable
+before building. No deployment adapter is required.
+
+For a Node.js host, run `pnpm build` followed by `pnpm start`.
