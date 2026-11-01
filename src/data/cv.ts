@@ -43,7 +43,7 @@ const formatUrl = (url: string | undefined, fallback: string) => {
 
 const sharedContact: ContactInfo = {
     github: "",
-    linkedin: formatUrl(import.meta.env.PUBLIC_LINKEDIN, "https://linkedin.com/in/placeholder")
+    linkedin: formatUrl(process.env.NEXT_PUBLIC_LINKEDIN || process.env.PUBLIC_LINKEDIN, "https://linkedin.com/in/placeholder")
 };
 
 const sharedCourses: CourseItem[] = [
