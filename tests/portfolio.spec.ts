@@ -142,5 +142,5 @@ test('renders localized content without JavaScript', async ({ browser }) => {
 
 test('returns 404 for unknown routes and serves the favicon', async ({ request }) => {
   expect((await request.get('/unknown/')).status()).toBe(404);
-  expect((await request.get('/favicon.svg')).status()).toBe(200);
+  expect((await request.get('/favicon.ico')).status()).toBe(200);
 });
