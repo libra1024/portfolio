@@ -5,8 +5,9 @@ Tailwind CSS 4. English is available at `/` and Spanish at `/es/`.
 
 ## Development
 
-Use Node.js 24.x and pnpm. If you use nvm, run `nvm install` and `nvm use`
-to select the version specified in `.nvmrc`.
+Use Node.js 24.x and pnpm 12.16.1, pinned in `package.json`. If you use nvm,
+run `nvm install` and `nvm use` to select the version specified in `.nvmrc`.
+Install pnpm with `npm install -g pnpm@12.16.1` if it is not already available.
 
 ```sh
 pnpm install
