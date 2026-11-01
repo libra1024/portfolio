@@ -9,16 +9,16 @@ Use Node.js 22.12 or newer and pnpm.
 
 ```sh
 pnpm install
-cp .env.example .env.local
+cp .env.example .env
 pnpm dev
 ```
 
 Open `http://localhost:3000`.
 
-Set `NEXT_PUBLIC_LINKEDIN` in `.env.local` to your LinkedIn profile URL. The
-previous `PUBLIC_LINKEDIN` variable is also supported; `NEXT_PUBLIC_LINKEDIN`
-takes precedence. URLs without a scheme receive `https://`. Rebuild after
-changing the value because both portfolio pages are prerendered.
+Set `PUBLIC_LINKEDIN` in `.env` to your LinkedIn profile URL. The value is read
+on the server when the portfolio pages are built. URLs without a scheme receive
+`https://`. Rebuild after changing the value because both pages are prerendered.
+The `.env` file stays local and is ignored by Git.
 
 ## Commands
 
