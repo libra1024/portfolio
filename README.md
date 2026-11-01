@@ -64,8 +64,9 @@ one-time redirect unless the visitor has explicitly chosen a language.
 
 ## Deployment
 
-On Vercel, select the **Next.js** framework preset and use `pnpm build`. Remove
-any previous custom output-directory setting. Configure the LinkedIn variable
-before building. No deployment adapter is required.
+The included `vercel.json` selects the **Next.js** framework preset and the
+`.next` output directory, overriding project settings from older deployments.
+Configure `PUBLIC_LINKEDIN` in Vercel before building. No deployment adapter is
+required.
 
 For a Node.js host, run `pnpm build` followed by `pnpm start`.
