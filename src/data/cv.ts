@@ -65,7 +65,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
             },
             {
                 label: "Backend",
-                items: ["Spring Boot", "Django", "FastAPI"]
+                items: ["Spring Boot", "FastAPI"]
             },
             {
                 label: "DevOps & Tools",
@@ -112,7 +112,7 @@ export const cvData: Record<'en' | 'es', CVProfile> = {
             },
             {
                 label: "Backend",
-                items: ["Spring Boot", "Django", "FastAPI"]
+                items: ["Spring Boot", "FastAPI"]
             },
             {
                 label: "DevOps y Herramientas",
