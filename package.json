@@ -2,8 +2,9 @@
   "name": "code",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@12.16.1",
   "engines": {
-    "node": ">=22.12.0"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "next dev",
