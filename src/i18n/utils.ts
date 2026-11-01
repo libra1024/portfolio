@@ -5,6 +5,8 @@ export const languages = {
 
 export const defaultLang = 'en';
 
+export type Language = keyof typeof languages;
+
 export const ui = {
   en: {
     'nav.about': 'About',
@@ -46,15 +48,8 @@ export const ui = {
   },
 };
 
-export function getLangFromUrl(url: URL): keyof typeof ui {
-  const [, lang] = url.pathname.split('/');
-  if (lang in ui) return lang as keyof typeof ui;
-  return defaultLang;
-}
-
-export function useTranslations(lang: keyof typeof ui | string) {
+export function getTranslations(lang: Language) {
   return function t(key: keyof typeof ui[typeof defaultLang]): string {
-    // @ts-ignore - Dynamic key access
-    return ui[lang as keyof typeof ui]?.[key] || ui[defaultLang][key];
+    return ui[lang][key] || ui[defaultLang][key];
   }
 }
